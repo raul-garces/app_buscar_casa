@@ -15,17 +15,12 @@
 <body>
 
 
-    <!--todoo lo que se encuentre en este div luego sera remplasado dinamicamente 
-        por medio de node.js al enviarle los datos del usuario que se acaba de registrar 
-    y se ha guardado en la vase de datos a lo cual se le concatenaqra la informacion de esta pag-->
+    <!--esta seccion es el formulario de comprar con credito infonavit -->
 
 
 
+    <div class="container form2 escondido" id="formInfonavit">
 
-    <div class="container form2">
-        <header>
-
-        </header>
         <div class="animated  zoomIn delay-0.5s">
             <div class=" info ">
 
@@ -41,7 +36,7 @@
         </div>
         <div class="animated bounceInLeft delay-0.5s">
             <div class="container form" id="formulariov">
-                <form action="../html/index.html">
+                <form action="../html/index.html" id="formInfonavit">
 
                     <div class="select1"> <span class="pregunta">¿En que municipo vives?</span>
                         <select class="select" name="location" required id="location">
@@ -76,8 +71,84 @@
         </div>
     </div>
 
+    <!--esta seccion es la de compra con efectivo -->
+    <div class="container form2 escondido" id="efectivo">
+
+        <div class="animated  zoomIn delay-0.5s">
+            <div class=" info ">
+
+                <img src="../img/svg/undraw_cabin_hkfr.svg" alt="">
+                <div>
+                    <h2>riki ricon
+                    </h2>
+                </div>
+                <h2> Ya casi terminamos </h2>
+
+                <p> Por ultimo es encesario proporcionar una informacion adicional, <br> esto servira para poder encontrar los resultados de manera automatica</p>
+            </div>
+        </div>
+        <div class="animated bounceInLeft delay-0.5s">
+            <div class="container form" id="formulario2">
+                <form action="../html/index.html" id="formEfectivo">
+
+                    <div class="select1"> <span class="pregunta">¿En que municipo vives?</span>
+                        <select class="select" name="location" required id="location">
+                                <option value="">Elige un municipio</option>
+                        <option value="">monterrey</option>
+                        <option value="">Santa Catarina</option>
+                        <option value="">guadalupe</option>
+                        <option value="">Garcia</option>
+                        <option value="">Escobedo</option>
+                        <option value="">San pedro</option>
+                        <option value="">San nicolas</option>
+                    </select>
+                    </div>
+                    <div class="inputs">
+                        <h4> Compra con efectivo</h4>
+                        <input type="text" id="cantidad" onkeypress=" return soloNumeros(event)" placeholder="¿Cuanto deseas gastar?  ">
+
+                        <input type="text" id="phone" onkeypress=" return soloNumeros(event)" placeholder="numero de contacto (adicional) ">
+
+                    </div>
+                    <div class="2" id="check2">
+                        <input type="checkbox" class="condicion" value="acepto2" id="acepto2"> <label for="acepto">Hacepto  los terminos y condiciones </label>
+                    </div>
+                    <div class="boton"><button type="submit"> conocer mis resultados</button></div>
+
+                    <div class=" container masInformacion">
+                        <button type="button" class="btn "><a href="../html/tutoral-infonavit.html" >me interesa un credito bancario </a></button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
+    </div>
+
+    <!--esta seccion es la cortina que escone las otras secciones -->
+    <div class="principal " id="principal">
+        <div class="container Quiero"> Quiero comprar usando ...</div>
+
+        <div class="cortina ">
+            <section class="WOW opcion1" id="seccion1">
+
+                <a href="#" onclick="return cortina1(), formInfonavit()">
+                    <h2>credito infonavit </h2>
+
+                    <img src="../img/svg/undraw_payments_21w6.svg" alt="credito">
+                </a>
+            </section>
+
+            <section class="opcion2 " id="seccion2">
+                <a href="#" onclick="return cortina2(), formEfectivo()">
+                    <h2>efectivo solamente</h2>
+                    <img src="../img/svg/undraw_Savings_dwkw.svg" alt="Efectivo">
+                </a>
+            </section>
+
+        </div>
+    </div>
     <footer class="wow zoomIn " data-wow-Duration="1s" data-wow-delay=".2s">
 
         <h4>Consulta los terminos y condiciones en: </h4><a href="#">www.searchhouse/terminos&condiciones.com</a>

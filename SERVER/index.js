@@ -16,13 +16,11 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
+
 //rutes
-app.get('/', (req, res) => {
-    res.render('index.ejs');
-});
-app.get('/compra', (req, res) => {
-    console.log(req.body);
-    res.send("estas coomprando")
+app.use(require("./routes/index.route.js"));
+
+
 });
 
 

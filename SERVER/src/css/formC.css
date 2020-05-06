@@ -19,6 +19,10 @@ body {
     height: auto;
 }
 
+.form2.escondido {
+    display: none;
+}
+
 
 /*div info*/
 
@@ -395,5 +399,232 @@ footer a:hover {
         margin: 0px 0px 10px 0px;
         padding: 15px;
         color: #ffffff;
+    }
+}
+
+
+/*estilos del formulario de efectivo */
+
+.efectivo {
+    display: block;
+}
+
+.efectivo.escondido {
+    display: none;
+}
+
+
+/*estilo para la seleccion y animacion de cortinas */
+
+.principal {
+    display: block;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.principal.actived {
+    display: none;
+}
+
+.Quiero {
+    border-radius: 25px;
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cortina {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-areas: "op1 op2";
+    height: 600px;
+}
+
+.cortina .opcion1 {
+    grid-area: op1;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    border-radius: 0px 25px 25px 0px;
+    background-color: #f5bc8d;
+    text-align: center;
+    padding: 50px;
+    -webkit-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+.cortina .opcion1.actived {
+    transform: translate(150px, 0);
+    -webkit-transform: translate(-750px, 0);
+    /** Chrome & Safari **/
+}
+
+.cortina .opcion1:hover {
+    background-color: rgba(64, 142, 243, 0.952);
+}
+
+.cortina .opcion2 {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    border-radius: 25px 0px 0px 25px;
+    background-color: #fac9a0;
+    grid-area: op2;
+    text-align: center;
+    padding: 50px;
+    -webkit-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+.cortina .opcion2.actived {
+    transform: translate(150px, 0);
+    -webkit-transform: translate(750px, 0);
+    /** Chrome & Safari **/
+}
+
+.cortina .opcion2:hover {
+    background-color: rgba(64, 142, 243, 0.952);
+}
+
+.cortina a {
+    color: #dfe6ff;
+    font-size: 35px;
+}
+
+.cortina a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cortina img {
+    width: 450px;
+    margin: 0px;
+    margin-top: 75px;
+    height: auto;
+}
+
+.parte1 {
+    background-color: black;
+    color: #b6e5e9;
+    position: absolute;
+    width: 600px;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+/*media query*/
+
+@media screen and (max-width:1100px) {
+    .cortina img {
+        width: 380px;
+        padding: 10px;
+        margin-top: 95px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .cortina img {
+        width: 300px;
+        padding: 5px;
+        margin-top: 85px;
+        height: auto;
+    }
+    .cortina h2 {
+        font-size: 35px;
+    }
+    .cortina .opcion1 {
+        height: 550px;
+        border-radius: 0px 50px 50px 0px;
+    }
+    .cortina .opcion2 {
+        height: 550px;
+        border-radius: 50px 0px 0px 50px
+    }
+}
+
+@media screen and (max-width:766px) {
+    .cortina {
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+        grid-template-areas: "op1 op2";
+        height: 410px;
+    }
+    .cortina img {
+        width: 200px;
+        padding: 5px;
+        margin-top: 85px;
+        height: auto;
+    }
+    .cortina h2 {
+        font-size: 20px;
+    }
+    .cortina .opcion1 {
+        height: 400px;
+        ;
+    }
+    .cortina .opcion2 {
+        height: 400px;
+        ;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .cortina {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2 1fr);
+        grid-template-areas: "op1" "op2";
+        height: 800px;
+    }
+    .cortina img {
+        width: 320px;
+        margin: 0px;
+        padding: 5px;
+        margin-top: 15px;
+        height: auto;
+    }
+    .cortina h2 {
+        font-size: 25px;
+    }
+    .cortina .opcion1 {
+        height: 350px;
+        ;
+    }
+    .cortina .opcion2 {
+        height: 350px;
+        ;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .cortina {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2 1fr);
+        grid-template-areas: "op1" "op2";
+        height: 700px;
+    }
+    .cortina img {
+        width: 250px;
+        margin: 0px;
+        padding: 5px;
+        margin-top: 15px;
+        height: auto;
+    }
+    .cortina h2 {
+        font-size: 20px;
+    }
+    .cortina .opcion1 {
+        height: 300px;
+        ;
+    }
+    .cortina .opcion2 {
+        height: 300px;
+        ;
     }
 }
