@@ -48,7 +48,7 @@ function soloNumeros(e) {
 /*funciones de validacion*/
 function validateName(nombre) {
     if (nombre.value === 0 || nombre.value == "" || nombre.value.length < 10) {
-        console.log("escribe un nombre")
+
 
         event.preventDefault()
 
@@ -66,7 +66,7 @@ function validateName(nombre) {
 
         return (false)
     } else {
-        console.log("nombre adecuado");
+
 
         nombre.classList.remove("alert")
         nombre.classList.remove("error")
@@ -79,7 +79,7 @@ function validateName(nombre) {
 function validateEmail(email) {
 
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo.value)) {
-        console.log("asas");
+
 
         email.classList.remove("alert")
         email.classList.remove("error")
@@ -100,7 +100,6 @@ function validateEmail(email) {
 function validatePassword(contraseña) {
     if (contraseña.value === 0 || contraseña.value == "") {
 
-        console.log("escribe una contraseña")
         event.preventDefault()
         contraseña.classList.add("error");
 
@@ -124,7 +123,7 @@ function validatePassword(contraseña) {
 function validatePassword2(confirmacion) {
 
     if (confirmacion.value === 0 || confirmacion.value == "") {
-        console.log("repite la contreaseña")
+
         event.preventDefault()
 
         confirmacion.classList.add("error")
@@ -139,7 +138,7 @@ function validatePassword2(confirmacion) {
         confirmacion.classList.add("alerta");
 
     } else {
-        console.log("las contraseñas coinciden");
+
 
         confirmacion.classList.remove("alerta");
         confirmacion.classList.remove("error");
@@ -158,7 +157,7 @@ function passwordOk() {
         confirmacion.classList.remove("error")
         confirmacion.classList.remove("correcto")
         confirmacion.classList.add("alerta")
-        console.log("sadasd")
+
 
         return (false)
     } else {
@@ -227,15 +226,19 @@ function alerta1() {
         cui.classList.add("zoomIn")
     } else { console.log("dieron positivo para cocaina :v") }
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo.value)) {
-        console.log("el imput correo dio positivo para cocaina :v")
+
     } else {
-        cui.classList.add("on");
-        cui.classList.add("zoomIn")
+        setTimeout(() => {
+            cui.classList.add("on");
+            cui.classList.add("zoomIn")
+        }, 3000);
     }
     if (contraseña.value !== confirmacion.value) {
-        cui.classList.add("on")
-        cui.classList.add("zoomIn")
 
+        setTimeout(() => {
+            cui.classList.add("on");
+            cui.classList.add("zoomIn")
+        }, 3000);
     } else {
         console.log("vale")
     }
@@ -245,12 +248,13 @@ function alerta1() {
 
 formulario.addEventListener("submit", e => {
     validateName(nombre);
+    console.log(nombre.value)
     validatePhone(numero);
     validateEmail(email);
     validatePassword(contraseña);
     validatePassword2(confirmacion);
     passwordOk();
     alerta1();
-
+    event.preventDefault()
 
 })
