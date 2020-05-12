@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 app.use(require("./routes/index.route.js"));
 
 
-});
+
 
 
 app.listen(app.get("port"), () => {

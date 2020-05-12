@@ -229,15 +229,15 @@ function alerta1() {
 
     } else {
         setTimeout(() => {
-            cui.classList.add("on");
-            cui.classList.add("zoomIn")
+           
         }, 3000);
     }
     if (contraseña.value !== confirmacion.value) {
-
+        cui.classList.add("on");
+        cui.classList.add("zoomIn")
         setTimeout(() => {
-            cui.classList.add("on");
-            cui.classList.add("zoomIn")
+            cui.classList.remove("on");
+            cui.classList.remove("zoomIn")
         }, 3000);
     } else {
         console.log("vale")
