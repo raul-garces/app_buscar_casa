@@ -1,5 +1,10 @@
-const { Router } = require("express")
+module.exports = {
 
-const router = Router();
+    host: "localhost:8080",
+    user: "root",
+    password: "",
+    database: "user",
 
-module.exports= router
+
+
+}

@@ -1,19 +1,18 @@
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const exphbs = require('express');
+const exphbs = require('express-handlebars');
 const path = require("path");
 
 
 //setings
 
-//ddsfdsf
 
 app.set('appName', "search house");
 
 
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, "views"));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
     defaultLayout: "main",
     layoutsDir: path.join(app.get("views"), "layouts"),
@@ -25,8 +24,7 @@ app.set("view engine", ".hbs");
 app.set(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.set('port', process.env.PORT || 5000);
-app.set('view engine', "ejs");
+
 
 
 
@@ -45,8 +43,11 @@ app.use(require("./routes/index.route.js"));
 app.use('/links', require("./routes/links"));
 app.use(require("./routes/autentication"));
 
+
+
 //public
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + "/public"));
+
 
 
 app.listen(app.get("port"), () => {

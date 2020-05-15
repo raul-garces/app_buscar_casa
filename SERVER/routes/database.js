@@ -1,29 +1,24 @@
-var  mysql = require("mysql");
-var conexion = mysql.createConnection({
-    host : "localhost",
-    database : "user",
-    password : "",
-    
-}); 
+var mysql = require("mysql");
 
+const { database } = require("./keys");
+const { promisify } = require("util")
+const pool = mysql.createPool(database)
 
-conexion.connect(function(err){
-    if (err){
-        console.log("error in conexion" + err.stack);
-        return; 
+pool.getConnection((err, conection) => {
+    if (err) {
+        if (err.code === 'PROTOCOL_CONECTION_LOST') {
+            console.log("DATA BASE CONECTION WAS CLOSET");
+        }
+        if (err.code === "ER_CON_COUNT_ERROR") {
+            console.log('DATABASE HAS TO MANY CONNECTION');
+        }
+        if (err.code === 'ECONNREFUSED') {
+            console.log("DATABASE CONNECTION WAS REFUSED");
+        }
     }
-
-    console.log("conexion ok" + conexion.threadId);
-
-})
-
-conexion.query("select * form user ", function ( error,result ,fields){
-    if (error)
-    throw error;
-
-    result.forEach( result=> {
-        console.log(result);
-    });
+    if (conection) conection.release();
+    console.log("DB is connected")
 });
-
-conexion.end();
+//promisify pool querys
+pool.query = promisify(pool.query);
+module.exports = pool;

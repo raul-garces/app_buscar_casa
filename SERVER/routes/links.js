@@ -1,5 +1,5 @@
 const { Router } = require("express")
 
 const router = Router();
-
-module.exports= router
+const pool = require("../routes/database")
+module.exports = router
