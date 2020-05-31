@@ -48,7 +48,6 @@ function formEfectivo() {
 }
 
 
-
 /*validacion formulario de compra con infonavit */
 var validacion = document.getElementById("formulariov");
 var prestamo = document.getElementById("prestamo");

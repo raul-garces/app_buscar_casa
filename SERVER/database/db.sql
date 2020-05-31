@@ -1,6 +1,6 @@
-CREATE DATABASE app_casas ;
+CREATE DATABASE app_siker ;
 
-USE app_casas;
+USE app_siker;
 
 
 

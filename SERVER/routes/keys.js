@@ -1,10 +1,12 @@
 module.exports = {
+    database: {
+        host: "localhost",
+        user: 'desarollo',
+        password: "provicional",
+        database: "siker"
+    }
 
-    host: "localhost:8080",
-    user: "root",
-    password: "",
-    database: "user",
 
+};
 
-
-}
+//YMLbF4GMv9cbrGWu contra

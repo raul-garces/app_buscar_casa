@@ -1,8 +1,9 @@
 var mysql = require("mysql");
 
 const { database } = require("./keys");
-const { promisify } = require("util")
-const pool = mysql.createPool(database)
+const { promisify } = require("util");
+const pool = mysql.createPool(database);
+
 
 pool.getConnection((err, conection) => {
     if (err) {
@@ -15,7 +16,9 @@ pool.getConnection((err, conection) => {
         if (err.code === 'ECONNREFUSED') {
             console.log("DATABASE CONNECTION WAS REFUSED");
         }
+
     }
+
     if (conection) conection.release();
     console.log("DB is connected")
 });

@@ -245,7 +245,6 @@ function alerta1() {
 }
 
 
-
 formulario.addEventListener("submit", e => {
     validateName(nombre);
     console.log(nombre.value)
@@ -255,6 +254,6 @@ formulario.addEventListener("submit", e => {
     validatePassword2(confirmacion);
     passwordOk();
     alerta1();
-    event.preventDefault()
+
 
 })

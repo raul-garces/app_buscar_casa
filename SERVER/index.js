@@ -1,14 +1,24 @@
 const express = require("express");
 const morgan = require("morgan");
-const app = express();
+
 const exphbs = require('express-handlebars');
 const path = require("path");
+const bodyParser = require("body-parser");
+const myConnection = require("express-myconnection");
+const passport = require("passport")
+
+var session = require("express-session")
 
 
+
+
+//inisialisation
+const app = express();
+require("./lib/passport");
 //setings
 
 
-app.set('appName', "search house");
+app.set('appName', "siker");
 
 
 app.set('port', process.env.PORT || 3000);
@@ -24,7 +34,8 @@ app.set("view engine", ".hbs");
 app.set(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json(myConnection));
 
 
 
@@ -35,12 +46,18 @@ app.use(morgan('dev'));
 app.use((req, res, next) => {
     next();
 });
-
-
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(session({ secret: "cats" }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //rutes
+
+
 app.use(require("./routes/index.route.js"));
-app.use('/links', require("./routes/links"));
+app.use("/opcion", require("./routes/links"));
 app.use(require("./routes/autentication"));
 
 
