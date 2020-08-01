@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search House</title>
+    <title>Siker</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/opciones.css">
     <link rel="stylesheet" href="../css/alert.css">
@@ -33,10 +33,10 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item ">
-                            <a data-scroll class="nav-link section" href="#inicio">inicio </a>
+                            <a data-scroll class="nav-link section" href="#inicio">Inicio </a>
                         </li>
                         <li class="nav-item">
-                            <a data-scroll class="nav-link section" href="#quienes">¿Search house?</a>
+                            <a data-scroll class="nav-link section" href="#quienes">¿Siker?</a>
                         </li>
 
                         <li class="nav-item ">
@@ -45,13 +45,14 @@
                         <li class="nav-item disabled">
                             <a class="nav-link section " href="#como">¿Y como lo hacemos?</a>
                         </li>
-                        <li class="nav-item disabled">
-                            <a class="nav-link ir" href="#reg">
-                                <h5>Registrarme </h5>
-                            </a>
-                        </li>
+
                         <li class="nav-item disabled">
                             <a class="nav-link section " href="#contact">Aun tengo dudas</a>
+                        </li>
+                        <li class="nav-item disabled">
+                            <a class="nav-link ir" href="/registro">
+                                <h5>Registrarme </h5>
+                            </a>
                         </li>
                     </ul>
 
@@ -162,69 +163,7 @@
                 </div>
             </div>
         </section>
-        <section class=" wow zoomIn registro" data-wow-Duration="1s" data-wow-delay=".2s" id="reg">
 
-
-            <div class="formulario" id="formulario">
-
-                <div class="registro">
-
-                    <form class="validacion" id="form" action="/" method="POST" name="formulario" onsubmit="return comprobar()">
-                        <H2>registrate</H2>
-                        <input class="nombre" type="text" id="nombre" name="nombre" onkeypress="return soloLetras(event) " onpaste="return false" placeholder="Nombre completo">
-
-                        <input class="correo" type="text" id="correo" name="correo" placeholder="Correo electronico">
-                        <input class="contraseña" type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
-                        <input class="confirmacion" type="password" id="confirmacion" name="confirmacion" placeholder="Confirmar contraseña">
-
-                        <input class="celular" type="text" id="numero" name="telefono" onkeypress=" return soloNumeros(event)" placeholder="Numero de celular">
-
-
-                        <div class="botone" id="opcion">
-                            <h4>me gustaria:</h4>
-                            <div class="botones">
-                                <input type="radio" class="" name="opcion" value="comprar" id="opcion2">
-                                <label for="opcion2"> Comprar </label>
-                                <input type="radio" class="" name="opcion" value=" vender" id="opcion1">
-                                <label for="opcion1"> Vender </label>
-
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="perfil">
-                            <button type="submit">Crear perfil</button>
-                            <a href="../formulario">Ya tengo cuenta</a>
-                        </div>
-
-
-                    </form>
-                </div>
-                <div class="animated cuidado " id="cuidado">
-                    <p>Verifica tu informacion </p> <br>
-                    <p class="rojo"> rojo: es porque esta vacio </p><br>
-                    <p class="amarillo">amarillo: hay un error verifica que todo este bien escrito</p>
-                </div>
-
-
-
-
-                <div id="seleccionaAlgo" class="animated aler  ">
-                    <h5>No has seleccionado ninguna opcion. Por favor seleciona comprar o vender para continuar con el registro. <br> <br> Despus has click en<br> "crear perfil" </h5>
-
-                </div>
-                <div class="information-description">
-
-                    <img src="../img/svg/pensando.svg" alt="">
-
-                    <p>¿Te gustaria estrenar o vender tu casa? Pero... ¿no sabes como? <br> <br> Ya sea que desees vender o comprar, lo único que tienes que hacer es registrarte, elegir una opción, <br>y Search House se encargara de encontrar el mejor resultado
-                        para ti, en cuestion de minutos. <br> Recuerda, alguien podria estar buscando lo que tu vendes, o, vender lo que tu buscas. </p>
-                </div>
-            </div>
-        </section>
 
 
 

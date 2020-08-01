@@ -25,7 +25,12 @@
             <div class=" info ">
 
                 <img src="../img/svg/undraw_cabin_hkfr.svg" alt="">
+                <script type="text/x-handlebars-template" id="template">
+                    {{# each Beers}}
 
+                    <p>{{person.firstname}}{{person.lastname}}</p>
+                    <br /> {{/each}}
+                </script>
                 <h2> Ya casi terminamos </h2>
 
                 <p> Por ultimo es encesario proporcionar una informacion adicional, <br> esto servira para poder encontrar los resultados de manera automatica</p>
@@ -173,6 +178,16 @@
             speed: 1000
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+        // compile the template
+        var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+        // execute the compiled template and print the output to the console
+        console.log(template({
+            doesWhat: "rocks!"
+        }));
+    </script>
+    { person: { firstname: "Yehuda", lastname: "Katz", }, }
 
 </body>
 

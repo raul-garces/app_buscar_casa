@@ -47,7 +47,7 @@ function soloNumeros(e) {
 
 /*funciones de validacion*/
 function validateName(nombre) {
-    if (nombre.value === 0 || nombre.value == "" || nombre.value.length < 10) {
+    if (nombre.value === 0 || nombre.value == "" || nombre.value.length < 4) {
 
 
         event.preventDefault()
@@ -71,6 +71,35 @@ function validateName(nombre) {
         nombre.classList.remove("alert")
         nombre.classList.remove("error")
         nombre.classList.add("correcto")
+        return (true)
+    }
+}
+
+function validateName(apellido) {
+    if (apellido.value === 0 || apellido.value == "" || apellido.value.length < 4) {
+
+
+        event.preventDefault()
+
+        apellido.classList.add("error")
+
+        apellido.classList.remove("correcto")
+        apellido.classList.remove("alert")
+        return (false)
+    } else if (/^(![0-9])$/.test(apellido.value)) {
+        event.preventDefault()
+
+        apellido.classList.remove("error")
+        apellido.classList.remove("correcto")
+        apellido.classList.add("alerta")
+
+        return (false)
+    } else {
+
+
+        apellido.classList.remove("alert")
+        apellido.classList.remove("error")
+        apellido.classList.add("correcto")
         return (true)
     }
 }

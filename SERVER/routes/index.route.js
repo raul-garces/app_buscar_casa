@@ -9,39 +9,31 @@ router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/html/index.html'));
 });
 
-router.post("/", async(req, res) => {
 
-    passport.authenticate('local.signup', {
-        successRedirect: '/opcion/..',
-        failureRedirect: '/falloi',
-        failureFlash: true
-    })
-
-    const { correo, telefono, opcion } = req.body;
-    const newUser = {
-
-        correo,
-
-        telefono,
-        opcion
-    };
-
-
-    await pool.query('INSERT INTO users set ? ', [newUser]);
-
-
-    if (newUser.opcion === "comprar") {
-        res.redirect("/opcion/preca")
-    } else if (newUser.opcion === " vender") {
-        res.redirect("/opcion/venta")
-    } else {
-        console.log("error al tomar decicion")
-
-    }
-
-    console.log(newUser);
-
+//-----------------------seginta rutra/registro de usuario-------------------------//
+router.get("/registro", function(req, res, next) {
+    res.render("links/registro");
 });
-//--------------------------------------------------------------//
+
+
+//-----------------------seginda rutra/ingresar-------------------------//
+router.get("/login", function(req, res, next) {
+    res.render("links/login");
+});
+
+
+router.get("/registro/compra", (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/formularioC.html'));
+});
+
+router.get("/venta", (req, res) => {
+    res.render("links/vender");
+});
+
+
+router.get("/porfile", async(req, res) => {
+    res.render("links/perfil");
+});
+
 
 module.exports = router;

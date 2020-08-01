@@ -1,11 +1,21 @@
 const { Router } = require("express")
-
+const passport = require("passport")
 const router = Router();
-const pool = require("./database")
-const path = require("path");
 
-router.get("/formulario", (req, res) => {
-    res.render(path.join(__dirname, '../public/html/formularioC.html'));
+
+
+router.post("/registro", passport.authenticate('local', {
+    successRedirect: '/porfile',
+    failureRedirect: '/registro',
+    failureFlash: true
+}));
+
+router.post("/login", (req, res, next) => {
+    passport.authenticate('local.login', {
+        successRedirect: '/porfile',
+        failureRedirect: '/login',
+        failureFlash: true
+    })(req, res, next);
 });
 
 module.exports = router
